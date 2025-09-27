@@ -47,6 +47,36 @@ body {
 
 #carousel-container {
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#carousel {
+  display: flex;
+  gap: 1rem;
+}
+
+.arrow-button {
+  border: none;
+  background-color: var(--page-background);
+  cursor: pointer;
+}
+
+#carousel-items {
+  display: flex;
+  gap: 1rem;
+}
+
+.carousel-item {
+  width: 15rem;
+  height: 15rem;
+  background-color: var(--button);
+  border-radius: 5px;
+}
+
+.hidden {
+  display: none;
 }
 
 #footer {
