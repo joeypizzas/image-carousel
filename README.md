@@ -1,2 +1,3 @@
-# template-js
-Template repo for HTML/CSS/JS projects
+# Image carousel
+
+A simple image carousel. Built for TOP by [joeypizzas](https://github.com/joeypizzas).
