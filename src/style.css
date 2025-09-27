@@ -1,1 +1,70 @@
-/* Template style.css file */
+/* Image carousel style */
+
+:root {
+  --page-background: #e8ebf0;
+  --carousel-background: #ffffff;
+  --text: #2e2e2e;
+  --text-hover: #2563eb;
+  --button: #4a4a4a;
+  --button-hover: #2563eb;
+  --button-click: #1e40af;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  background-color: var(--page-background);
+}
+
+#main-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+#header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0rem 2rem 0rem;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+#carousel-container {
+  flex: 1;
+}
+
+#footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0rem 1rem 0rem;
+}
+
+#footer-text {
+  color: var(--text);
+}
+
+a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+a:hover {
+  color: var(--text-hover);
+}
