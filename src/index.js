@@ -1,3 +1,3 @@
-// Template index.js file
+// Image carousel JS index
 
 import "./style.css";
