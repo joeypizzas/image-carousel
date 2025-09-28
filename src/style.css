@@ -57,12 +57,15 @@ body {
 #carousel {
   display: flex;
   gap: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .arrow-button {
   border: none;
   background-color: var(--page-background);
   cursor: pointer;
+  height: 2.25rem;
 }
 
 #carousel-items {
@@ -79,6 +82,18 @@ body {
 
 .hidden {
   display: none;
+}
+
+#carousel-dots-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dot-button {
+  border: none;
+  background-color: var(--page-background);
+  cursor: pointer;
+  padding: 0rem;
 }
 
 #footer {
