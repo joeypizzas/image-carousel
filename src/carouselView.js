@@ -65,7 +65,6 @@ export function initCarouselListeners() {
 
   function unselectDot() {
     const formerSelectedDot = document.querySelector(".selected-dot");
-
     if (formerSelectedDot) {
       const formerSelectedDotSVG = formerSelectedDot.querySelector(".dot-svg");
       formerSelectedDotSVG.style.fill =
