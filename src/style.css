@@ -73,10 +73,9 @@ body {
   gap: 1rem;
 }
 
-.carousel-item {
+.carousel-img {
   width: 15rem;
   height: 15rem;
-  background-color: var(--button);
   border-radius: 5px;
 }
 
