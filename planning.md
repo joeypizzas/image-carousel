@@ -28,12 +28,9 @@
    - Image src.
    - Selected: yes/no.
 3. Image unique ID is added to corresponding dot for its placement at that time in the carousel.
-4. Print carousel items function that:
-   - Adds the image SRCs and IDs to the carousel, and maybe indicates which one is selected?
-   - Adds them to the UI such that the selected image is always in the third position in the carousel. This will be done by creating a new array via map that returns the new order to add the elements into the UI.
-5. App state methods needed:
+4. App state methods needed:
    - Get array for UI: Takes in ID as parameter, finds that in the OG array and maps a new array where it is in the third position. Returns array, which is then passed as parameter when setting new array in UI.
-6. UI methods needed:
+5. UI methods needed:
    - Move forward function: select 4th item in the index of carousel pictures UI item (since that has the current order you want to move forward from), when , get array for UI with that picture's ID and then add it to UI.
    - Move backward function: select 2nd item in the index of carousel pictures UI item (since that has the current order you want to move forward from), when , get array for UI with that picture's ID and then add it to UI.
    - Add carousel to UI: Adds imgs with SRCs, data-IDs, and selectors to img elements. Also adds data-ids to dots. Takes image order array as parameter.
