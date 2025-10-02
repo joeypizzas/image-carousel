@@ -1,5 +1,7 @@
 // JS for carousel view
 
+import { CarouselImage, images } from "./carousel.js";
+
 export function initCarouselListeners() {
   const root = document.documentElement;
   const arrowButtons = document.querySelectorAll(".arrow-button");
