@@ -77,3 +77,12 @@ export function initCarouselListeners() {
     }
   }
 }
+
+export function addCarouselImagesToUI(carouselImageArr) {
+  const imagesToShow = carouselImageArr;
+  const carouselImgs = document.querySelectorAll(".carousel-img");
+
+  for (imgs of carouselImgs) { // figure out how to get index of image in the nodelist to get correct image from array
+    img.src = 
+  }
+}
