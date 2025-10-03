@@ -1,7 +1,10 @@
 // Image carousel JS index
 
 import "./style.css";
-import { initCarouselListeners } from "./carouselView.js";
+import {
+  initCarouselListeners,
+  addCarouselImagesToUI,
+} from "./carouselView.js";
 import garlicKnotsImage from "./assets/garlic_knots.png";
 import meatballsImage from "./assets/meatballs.png";
 import tomatoPieImage from "./assets/tomato_pie.png";
@@ -21,4 +24,5 @@ images.addNewImage(tomatoPie);
 images.addNewImage(meatballs);
 images.addNewImage(garlicKnots);
 
+addCarouselImagesToUI(images.getImages());
 initCarouselListeners();
