@@ -25,6 +25,12 @@ export function initCarouselListeners() {
     arrow.addEventListener("mouseup", () => {
       arrowSVG.style.stroke =
         getComputedStyle(root).getPropertyValue("--button-hover");
+      if (arrow.id === "arrow-forwards") {
+        moveForward();
+      }
+      if (arrow.id === "arrow-backwards") {
+        moveBackwards();
+      }
     });
   });
 
@@ -54,6 +60,7 @@ export function initCarouselListeners() {
         dot.classList.add("selected-dot");
         selectDot();
       }
+      addCarouselImagesToUI(images.reorderImagesForDisplay(dot.dataset.id)); // Need to get dots to match OG order here at all times, use ID from original array
     });
   });
 }
@@ -88,15 +95,32 @@ export function addCarouselImagesToUI(carouselImageArr) {
     img.src = imagesToShow[i].src;
     img.alt = imagesToShow[i].alt;
     img.dataset.id = imagesToShow[i].id;
+    if (i !== 2) {
+      img.classList.add("hidden");
+    }
   });
 
   dotButtons.forEach((dot, i) => {
     dot.dataset.id = imagesToShow[i].id;
-    if (i === 2) {
-      if (!dot.classList.contains("selected-dot")) {
-        dot.classList.add("selected-dot");
-        selectDot();
-      }
-    }
+    //if (i === 2) { Look into logic here!
+    //  if (!dot.classList.contains("selected-dot")) {
+    //    dot.classList.add("selected-dot");
+    //    selectDot();
+    //  }
+    //}
   });
+}
+
+function moveForward() {
+  const carouselImgs = document.querySelectorAll(".carousel-img");
+  addCarouselImagesToUI(
+    images.reorderImagesForDisplay(carouselImgs[3].dataset.id),
+  );
+}
+
+function moveBackwards() {
+  const carouselImgs = document.querySelectorAll(".carousel-img");
+  addCarouselImagesToUI(
+    images.reorderImagesForDisplay(carouselImgs[1].dataset.id),
+  );
 }
