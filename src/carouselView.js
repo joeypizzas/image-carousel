@@ -101,13 +101,13 @@ export function addCarouselImagesToUI(carouselImageArr) {
   });
 
   dotButtons.forEach((dot, i) => {
-    dot.dataset.id = imagesToShow[i].id;
-    //if (i === 2) { Look into logic here!
-    //  if (!dot.classList.contains("selected-dot")) {
-    //    dot.classList.add("selected-dot");
-    //    selectDot();
-    //  }
-    //}
+    dot.dataset.id = images.getImages()[i].id;
+    if (dot.dataset.id === imagesToShow[2].id) {
+      if (!dot.classList.contains("selected-dot")) {
+        dot.classList.add("selected-dot");
+        selectDot();
+      }
+    }
   });
 }
 
