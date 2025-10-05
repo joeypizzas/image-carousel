@@ -116,7 +116,7 @@ export function addCarouselImagesToUI(carouselImageArr) {
   });
 }
 
-function moveForward() {
+export function moveForward() {
   const carouselImgs = document.querySelectorAll(".carousel-img");
   // Display img one after current middle position
   addCarouselImagesToUI(
