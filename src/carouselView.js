@@ -60,7 +60,7 @@ export function initCarouselListeners() {
         dot.classList.add("selected-dot");
         selectDot();
       }
-      addCarouselImagesToUI(images.reorderImagesForDisplay(dot.dataset.id)); // Need to get dots to match OG order here at all times, use ID from original array
+      addCarouselImagesToUI(images.reorderImagesForDisplay(dot.dataset.id));
     });
   });
 }
@@ -104,6 +104,7 @@ export function addCarouselImagesToUI(carouselImageArr) {
     dot.dataset.id = images.getImages()[i].id;
     if (dot.dataset.id === imagesToShow[2].id) {
       if (!dot.classList.contains("selected-dot")) {
+        unselectDot();
         dot.classList.add("selected-dot");
         selectDot();
       }
