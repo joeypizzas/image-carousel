@@ -4,6 +4,7 @@ import "./style.css";
 import {
   initCarouselListeners,
   addCarouselImagesToUI,
+  moveForward,
 } from "./carouselView.js";
 import garlicKnotsImage from "./assets/garlic_knots.png";
 import meatballsImage from "./assets/meatballs.png";
@@ -26,3 +27,4 @@ images.addNewImage(garlicKnots);
 
 addCarouselImagesToUI(images.getImages());
 initCarouselListeners();
+setInterval(moveForward, 5000);
