@@ -1,6 +1,7 @@
 // JS for carousel application state
 
 export class CarouselImage {
+  // Instantiate objs to store image attributes
   constructor(src, alt) {
     this.src = src;
     this.alt = alt;
@@ -10,6 +11,7 @@ export class CarouselImage {
 }
 
 export const images = (function imageList() {
+  // Arr + methods to store imgs & reordered arr to put specific img on display
   let allImages = [];
 
   function addNewImage(newImage) {
@@ -22,14 +24,17 @@ export const images = (function imageList() {
 
   function reorderImagesForDisplay(displayImageID) {
     const imageIndex = allImages.findIndex(
+      // Find index of img to display in original arr
       (image) => image.id === displayImageID,
     );
 
+    // new arr starts 2 positions before so correct img is displayed
     let startIndex = imageIndex - 2;
     if (startIndex < 0) {
       startIndex += allImages.length;
     }
 
+    // new img to display is in middle position of concat arr
     return allImages.slice(startIndex).concat(allImages.slice(0, startIndex));
   }
 

@@ -87,6 +87,7 @@ function unselectDot() {
 }
 
 export function addCarouselImagesToUI(carouselImageArr) {
+  // arr param always has img to display in middle position
   const imagesToShow = carouselImageArr;
   const carouselImgs = document.querySelectorAll(".carousel-img");
   const dotButtons = document.querySelectorAll(".dot-button");
@@ -95,14 +96,17 @@ export function addCarouselImagesToUI(carouselImageArr) {
     img.src = imagesToShow[i].src;
     img.alt = imagesToShow[i].alt;
     img.dataset.id = imagesToShow[i].id;
+    // only display middle position arr for carousel effect
     if (i !== 2) {
       img.classList.add("hidden");
     }
   });
 
   dotButtons.forEach((dot, i) => {
+    // Dots retain ids from original arr order for correct highlight and navigation
     dot.dataset.id = images.getImages()[i].id;
     if (dot.dataset.id === imagesToShow[2].id) {
+      // Highlighted dot in original arr order always matches img in middle position
       if (!dot.classList.contains("selected-dot")) {
         unselectDot();
         dot.classList.add("selected-dot");
@@ -114,6 +118,7 @@ export function addCarouselImagesToUI(carouselImageArr) {
 
 function moveForward() {
   const carouselImgs = document.querySelectorAll(".carousel-img");
+  // Display img one after current middle position
   addCarouselImagesToUI(
     images.reorderImagesForDisplay(carouselImgs[3].dataset.id),
   );
@@ -121,6 +126,7 @@ function moveForward() {
 
 function moveBackwards() {
   const carouselImgs = document.querySelectorAll(".carousel-img");
+  // Display img one before current middle position
   addCarouselImagesToUI(
     images.reorderImagesForDisplay(carouselImgs[1].dataset.id),
   );
